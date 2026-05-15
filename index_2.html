@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesly Service – Menuiserie Métallique, Serrurerie & Pose de Fenêtres PVC/Alu</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Lesly Service, expert en travaux de menuiserie métallique, serrurerie et pose de fenêtres PVC et aluminium. Qualité, précision et fiabilité pour vos projets." />
+  <meta name="keywords" content="menuiserie métallique, serrurerie, fenêtres PVC, fenêtres aluminium, pose fenêtres, Lesly Service" />
+  <meta name="author" content="Lesly Service" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lesly Service – Menuiserie Métallique & Fenêtres PVC/Alu" />
+  <meta property="og:description" content="Expert en menuiserie métallique, serrurerie et pose de fenêtres PVC et aluminium. Contactez-nous pour vos projets." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Lesly Service",
+    "description": "Travaux de menuiserie métallique et serrurerie. Spécialité : Pose de fenêtres PVC et aluminium.",
+    "priceRange": "€€",
+    "telephone": "+33-X-XX-XX-XX-XX",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-deep:   #0d2a6b;
+      --blue-royal:  #1a4fc4;
+      --blue-mid:    #2e6fd9;
+      --blue-light:  #5b9fe8;
+      --blue-pale:   #ccdff7;
+      --beige:       #d8cdb5;
+      --beige-light: #f0ebe0;
+      --white:       #ffffff;
+      --grey-text:   #5a6a7e;
+      --dark-text:   #0b1d40;
+      --shadow:      0 8px 40px rgba(13,42,107,.15);
+      --radius:      12px;
+      --font-head:   'Barlow Condensed', sans-serif;
+      --font-body:   'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ===================== UTILITY ===================== */
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--blue-royal);
+      background: var(--blue-pale);
+      padding: .3rem .9rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--dark-text);
+    }
+
+    .section-title span { color: var(--blue-royal); }
+
+    /* ===================== SCROLL REVEAL ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* ===================== NAVBAR ===================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.1rem 0;
+      transition: background .4s, box-shadow .4s, padding .4s;
+    }
+
+    #navbar.scrolled {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(13,42,107,.1);
+      padding: .7rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .nav-logo img {
+      height: 46px;
+      width: auto;
+      filter: drop-shadow(0 2px 6px rgba(13,42,107,.2));
+      transition: transform .3s;
+    }
+    .nav-logo img:hover { transform: scale(1.06); }
+
+    .nav-brand {
+      font-family: var(--font-head);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: .95rem;
+      color: white;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color .2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--blue-royal);
+      transition: width .3s;
+    }
+
+    .nav-links a:hover { color: var(--blue-royal); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .btn-nav {
+      background: var(--blue-royal);
+      color: var(--white) !important;
+      padding: .55rem 1.4rem;
+      border-radius: 2rem;
+      font-weight: 600 !important;
+      transition: background .2s, transform .2s !important;
+      box-shadow: 0 4px 14px rgba(26,79,196,.35);
+    }
+    .btn-nav::after { display: none !important; }
+    .btn-nav:hover { background: var(--blue-deep) !important; transform: translateY(-2px) !important; }
+
+    /* Burger */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: .4rem;
+      background: none;
+      border: none;
+    }
+    .burger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--dark-text);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--blue-royal); }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-royal) 55%, var(--blue-mid) 100%);
+      z-index: 0;
+    }
+
+    /* Animated diagonal shapes */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(91,159,232,.22) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(216,205,181,.12) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 1;
+    }
+
+    /* Floating geometric shapes */
+    .geo {
+      position: absolute;
+      z-index: 1;
+      border-radius: 4px;
+      opacity: .13;
+      animation: floatGeo 8s ease-in-out infinite;
+    }
+    .geo-1 { width: 140px; height: 140px; background: var(--white); top: 15%; right: 12%; transform: rotate(45deg); animation-delay: 0s; }
+    .geo-2 { width: 80px; height: 80px; background: var(--beige); top: 70%; right: 25%; transform: rotate(30deg); animation-delay: 2s; }
+    .geo-3 { width: 60px; height: 60px; background: var(--white); top: 40%; right: 5%; transform: rotate(20deg); animation-delay: 4s; }
+
+    @keyframes floatGeo {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(-18px); }
+    }
+    .geo-2 { animation-name: floatGeo2; }
+    @keyframes floatGeo2 {
+      0%, 100% { transform: rotate(30deg) translateY(0); }
+      50%       { transform: rotate(30deg) translateY(-12px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      color: var(--white);
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 2rem;
+      margin-bottom: 1.6rem;
+      backdrop-filter: blur(6px);
+      animation: slideDown .8s .2s both;
+    }
+    .hero-badge::before { content: '✦'; font-size: .7rem; }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+      animation: slideDown .9s .35s both;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--beige);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(255,255,255,.82);
+      line-height: 1.7;
+      margin-bottom: 2.4rem;
+      max-width: 520px;
+      animation: slideDown 1s .5s both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: slideDown 1s .65s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--white);
+      color: var(--blue-royal);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: .85rem 1.9rem;
+      border-radius: 2rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,.18);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.22); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 2px solid rgba(255,255,255,.6);
+      color: var(--white);
+      font-weight: 600;
+      font-size: .95rem;
+      padding: .85rem 1.9rem;
+      border-radius: 2rem;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.15); border-color: var(--white); transform: translateY(-3px); }
+
+    .hero-stats {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 4rem;
+      animation: slideUp 1s .8s both;
+    }
+
+    .stat-item { text-align: left; }
+    .stat-number {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--beige);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .8rem;
+      color: rgba(255,255,255,.7);
+      margin-top: .2rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.55);
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px; height: 48px;
+      background: rgba(255,255,255,.4);
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ===================== SERVICES STRIP ===================== */
+    #services-strip {
+      background: var(--blue-deep);
+      padding: 3.5rem 0;
+      overflow: hidden;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+    }
+
+    .service-card {
+      padding: 2rem 1.8rem;
+      border-right: 1px solid rgba(255,255,255,.1);
+      transition: background .3s;
+      cursor: default;
+    }
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: rgba(255,255,255,.06); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-royal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      transition: transform .3s, background .3s;
+    }
+    .service-card:hover .service-icon { transform: scale(1.1) rotate(-5deg); background: var(--blue-mid); }
+
+    .service-name {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .4rem;
+    }
+
+    .service-desc {
+      font-size: .85rem;
+      color: rgba(255,255,255,.6);
+      line-height: 1.5;
+    }
+
+    /* ===================== ABOUT ===================== */
+    #apropos {
+      padding: 7rem 0;
+      background: var(--beige-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #apropos::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,79,196,.07) 0%, transparent 70%);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--blue-royal), var(--blue-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    /* Building illustration SVG */
+    .building-svg { width: 80%; max-width: 280px; }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 8px 32px rgba(13,42,107,.15);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .about-badge-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-royal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .about-badge-text strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: var(--blue-deep);
+      line-height: 1;
+    }
+    .about-badge-text span {
+      font-size: .78rem;
+      color: var(--grey-text);
+    }
+
+    .about-text { padding-right: 1rem; }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3a4a60;
+      margin-bottom: 1.4rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--dark-text);
+    }
+
+    .about-list li::before {
+      content: '';
+      width: 20px; height: 20px;
+      background: var(--blue-royal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='12' height='12'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--blue-royal);
+      color: var(--white);
+      font-weight: 600;
+      padding: .9rem 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 6px 20px rgba(26,79,196,.3);
+      transition: background .25s, transform .25s;
+    }
+    .btn-solid:hover { background: var(--blue-deep); transform: translateY(-3px); }
+
+    /* ===================== PROJETS ===================== */
+    #projets {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--blue-pale);
+    }
+
+    .project-card:first-child {
+      grid-column: span 2;
+    }
+
+    .project-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      transition: transform .5s ease;
+      display: block;
+    }
+
+    .project-card:first-child .project-img {
+      aspect-ratio: 16/9;
+    }
+
+    .project-card:hover .project-img { transform: scale(1.06); }
+
+    /* Illustrated project placeholders */
+    .project-placeholder {
+      width: 100%;
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-royal) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .8rem;
+      color: rgba(255,255,255,.6);
+      font-size: .85rem;
+      aspect-ratio: 16/10;
+    }
+    .project-card:first-child .project-placeholder { aspect-ratio: 16/9; }
+
+    .project-placeholder .proj-icon { font-size: 3rem; opacity: .7; }
+    .project-placeholder .proj-label {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,42,107,.85) 0%, transparent 55%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity .4s;
+    }
+
+    .project-card:hover .project-overlay { opacity: 1; }
+
+    .project-info h3 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .project-info p {
+      font-size: .83rem;
+      color: rgba(255,255,255,.75);
+      margin-top: .2rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: var(--blue-royal);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border-radius: 2rem;
+      margin-bottom: .5rem;
+    }
+
+    /* ===================== POURQUOI NOUS ===================== */
+    #pourquoi {
+      padding: 7rem 0;
+      background: var(--blue-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pourquoi::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 80% 20%, rgba(46,111,217,.3) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(91,159,232,.15) 0%, transparent 60%);
+    }
+
+    #pourquoi .section-label { color: var(--beige); background: rgba(216,205,181,.15); }
+    #pourquoi .section-title { color: var(--white); }
+    #pourquoi .section-title span { color: var(--beige); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: background .3s, transform .3s;
+      position: relative;
+      z-index: 1;
+    }
+    .why-card:hover { background: rgba(255,255,255,.11); transform: translateY(-5px); }
+
+    .why-number {
+      font-family: var(--font-head);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,.08);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    .why-title {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .6rem;
+    }
+
+    .why-desc { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.6; }
+
+    /* ===================== CONTACT ===================== */
+    #contact {
+      padding: 7rem 0;
+      background: var(--beige-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--dark-text);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      font-size: .95rem;
+      line-height: 1.7;
+      color: var(--grey-text);
+      margin-bottom: 2rem;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-item-icon {
+      width: 46px; height: 46px;
+      background: var(--blue-royal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: .82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--grey-text);
+      margin-bottom: .15rem;
+    }
+    .contact-item-text span {
+      font-size: .95rem;
+      color: var(--dark-text);
+      font-weight: 500;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--grey-text);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 2px solid #e8edf5;
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--dark-text);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      background: #f8fafd;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-royal);
+      box-shadow: 0 0 0 4px rgba(26,79,196,.1);
+      background: var(--white);
+    }
+
+    .form-group textarea { min-height: 120px; resize: vertical; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--blue-royal);
+      color: var(--white);
+      border: none;
+      border-radius: 2rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .25s, transform .25s;
+      box-shadow: 0 6px 20px rgba(26,79,196,.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .btn-submit:hover { background: var(--blue-deep); transform: translateY(-2px); }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      margin-bottom: .5rem;
+    }
+    .form-success p { color: var(--grey-text); font-size: .9rem; }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--blue-deep);
+      padding: 3.5rem 0 2rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand img { height: 50px; margin-bottom: 1rem; /*filter: brightness(10); opacity: .9;*/ }
+
+    .footer-brand p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col ul li a {
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--beige); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.4); }
+
+    /* ===================== FLOATING CTA ===================== */
+    .float-cta {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 500;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: .85rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 700;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      box-shadow: 0 8px 28px rgba(26,79,196,.45);
+      transform: translateY(100px);
+      transition: transform .5s cubic-bezier(.34,1.56,.64,1), background .2s;
+      opacity: 0;
+    }
+    .float-cta.visible { transform: none; opacity: 1; }
+    .float-cta:hover { background: var(--blue-deep); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { max-width: 480px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card:first-child { grid-column: auto; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .about-badge-float { bottom: .5rem; right: .5rem; }
+      .float-cta span.full { display: none; }
+      .float-cta { padding: 1rem; border-radius: 50%; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .contact-form { padding: 1.5rem; }
+    }
+
+
+    .scrolled  a {
+        color:var(--dark-text);
+    }
+
+    .scrolled .nav-brand {
+        color: var(--blue-deep)
+    }
+
+
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" aria-label="Accueil Lesly Service">
+      <img src="https://lh3.googleusercontent.com/d/1b9HxIjzym9g9pemVT-7m9ZFVjMDyLuCl" alt="Lesly Service logo" width="46" height="46" />
+      <span class="nav-brand">Lesly Service</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#apropos">À Propos</a></li>
+      <li><a href="#projets">Nos Projets</a></li>
+      <li><a href="#pourquoi">Expertise</a></li>
+      <li><a href="#contact" class="btn-nav">Devis Gratuit</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu mobile">
+  <a href="#apropos"  onclick="closeMenu()">À Propos</a>
+  <a href="#projets"  onclick="closeMenu()">Nos Projets</a>
+  <a href="#pourquoi" onclick="closeMenu()">Expertise</a>
+  <a href="#contact"  onclick="closeMenu()" style="color:var(--blue-royal)">Devis Gratuit →</a>
+</div>
+
+<!-- ========== HERO ========== -->
+<header id="hero" role="banner">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="geo geo-1"></div>
+    <div class="geo geo-2"></div>
+    <div class="geo geo-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Menuiserie Métallique & Serrurerie</div>
+      <h1 class="hero-title">
+        L'excellence du<br>
+        <em>métal &amp; du PVC</em>
+      </h1>
+      <p class="hero-sub">
+        Pose de fenêtres PVC et aluminium, serrurerie de précision et menuiserie métallique sur mesure. Qualité, durabilité et finitions irréprochables.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">
+          Obtenir un devis gratuit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#projets" class="btn-outline">
+          Voir nos réalisations
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats" aria-label="Chiffres clés">
+      <div class="stat-item">
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-label">Projets réalisés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">% Clients satisfaits</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true" style="display: none;">Scroll</div>
+</header>
+
+<!-- ========== SERVICES STRIP ========== -->
+<section id="services-strip" aria-label="Nos services">
+  <div class="container">
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">🪟</div>
+        <div class="service-name">Fenêtres PVC</div>
+        <p class="service-desc">Pose et remplacement de fenêtres PVC haute performance thermique et phonique.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.1s">
+        <div class="service-icon">🔲</div>
+        <div class="service-name">Fenêtres Aluminium</div>
+        <p class="service-desc">Menuiseries aluminium sur mesure, élégantes et robustes pour tous bâtiments.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.2s">
+        <div class="service-icon">🔩</div>
+        <div class="service-name">Serrurerie</div>
+        <p class="service-desc">Installations, dépannages et blindages de portes pour votre sécurité.</p>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay:.3s">
+        <div class="service-icon">🏗️</div>
+        <div class="service-name">Menuiserie Métallique</div>
+        <p class="service-desc">Portails, grilles, garde-corps et structures métalliques sur mesure.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="apropos" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal-left">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <!-- Inline SVG illustration -->
+            <svg class="building-svg" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Ground -->
+              <rect x="0" y="170" width="300" height="30" fill="rgba(255,255,255,.1)" rx="4"/>
+              <!-- Building 1 -->
+              <rect x="30" y="80" width="60" height="90" fill="rgba(255,255,255,.18)" rx="3"/>
+              <rect x="30" y="60" width="60" height="25" fill="rgba(255,255,255,.28)" rx="3"/>
+              <!-- Windows B1 -->
+              <rect x="40" y="90" width="12" height="12" fill="rgba(255,255,255,.6)" rx="2"/>
+              <rect x="58" y="90" width="12" height="12" fill="rgba(255,255,255,.6)" rx="2"/>
+              <rect x="76" y="90" width="5" height="12" fill="rgba(255,255,255,.3)" rx="1"/>
+              <rect x="40" y="110" width="12" height="12" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="58" y="110" width="12" height="12" fill="rgba(255,255,255,.6)" rx="2"/>
+              <rect x="40" y="130" width="12" height="12" fill="rgba(255,255,255,.4)" rx="2"/>
+              <rect x="58" y="130" width="12" height="12" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="40" y="150" width="30" height="20" fill="rgba(255,255,255,.15)" rx="2"/>
+              <!-- Building 2 (tall center) -->
+              <rect x="110" y="30" width="80" height="140" fill="rgba(255,255,255,.22)" rx="3"/>
+              <rect x="110" y="10" width="80" height="25" fill="rgba(255,255,255,.32)" rx="3"/>
+              <!-- Windows B2 -->
+              <rect x="120" y="40" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="140" y="40" width="14" height="14" fill="rgba(255,255,255,.55)" rx="2"/>
+              <rect x="160" y="40" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="120" y="62" width="14" height="14" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="140" y="62" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="160" y="62" width="14" height="14" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="120" y="84" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="140" y="84" width="14" height="14" fill="rgba(255,255,255,.45)" rx="2"/>
+              <rect x="160" y="84" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="120" y="106" width="14" height="14" fill="rgba(255,255,255,.55)" rx="2"/>
+              <rect x="140" y="106" width="14" height="14" fill="rgba(255,255,255,.65)" rx="2"/>
+              <rect x="160" y="106" width="14" height="14" fill="rgba(255,255,255,.45)" rx="2"/>
+              <rect x="130" y="140" width="40" height="30" fill="rgba(255,255,255,.12)" rx="2"/>
+              <!-- Building 3 -->
+              <rect x="210" y="70" width="60" height="100" fill="rgba(255,255,255,.18)" rx="3"/>
+              <rect x="210" y="50" width="60" height="25" fill="rgba(255,255,255,.28)" rx="3"/>
+              <!-- Windows B3 -->
+              <rect x="220" y="80" width="12" height="12" fill="rgba(255,255,255,.6)" rx="2"/>
+              <rect x="238" y="80" width="12" height="12" fill="rgba(255,255,255,.45)" rx="2"/>
+              <rect x="256" y="80" width="5" height="12" fill="rgba(255,255,255,.3)" rx="1"/>
+              <rect x="220" y="100" width="12" height="12" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="238" y="100" width="12" height="12" fill="rgba(255,255,255,.6)" rx="2"/>
+              <rect x="220" y="120" width="12" height="12" fill="rgba(255,255,255,.4)" rx="2"/>
+              <rect x="238" y="120" width="12" height="12" fill="rgba(255,255,255,.5)" rx="2"/>
+              <rect x="220" y="145" width="30" height="25" fill="rgba(255,255,255,.12)" rx="2"/>
+              <!-- Decorative lines -->
+              <path d="M0 185 Q75 175 150 178 Q225 181 300 170" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none"/>
+              <path d="M0 192 Q75 182 150 185 Q225 188 300 177" stroke="rgba(255,255,255,.1)" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <div class="about-badge-icon">🏅</div>
+          <div class="about-badge-text">
+            <strong>+15 ans</strong>
+            <span>d'expérience reconnue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal-right">
+        <span class="section-label">À propos de nous</span>
+        <h2 class="section-title" id="about-title">Artisans passionnés au <span>service de vos projets</span></h2>
+        <br>
+        <p>Chez <strong>Lesly Service</strong>, nous mettons notre expertise et notre savoir-faire au service de vos projets de menuiserie métallique, serrurerie et pose de fenêtres. Notre équipe qualifiée intervient avec rigueur et professionnalisme pour chaque chantier, quelle que soit sa taille.</p>
+        <p>Spécialisés dans la pose de fenêtres <strong>PVC et aluminium</strong>, nous garantissons des installations conformes aux normes en vigueur, pour une isolation thermique et phonique optimale.</p>
+        <ul class="about-list" aria-label="Nos engagements">
+          <li>Devis gratuit et détaillé sous 48h</li>
+          <li>Matériaux de qualité certifiés</li>
+          <li>Pose soignée par des artisans expérimentés</li>
+          <li>Garantie décennale sur tous nos travaux</li>
+          <li>Service après-vente réactif</li>
+        </ul>
+        <a href="#contact" class="btn-solid">
+          Nous contacter
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJETS ========== -->
+<section id="projets" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <span class="section-label">Nos Réalisations</span>
+        <h2 class="section-title" id="projects-title">Projets qui <span>parlent d'eux-mêmes</span></h2>
+      </div>
+      <a href="#contact" class="btn-solid reveal">Demander un projet similaire</a>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <img class="project-img" src="https://lh3.googleusercontent.com/d/1qGzh0Vljyop-iwOvqjbEsL-umRrAQWiH" alt="Résidence Les Acacias – Pose de fenêtres aluminium double vitrage" loading="lazy" width="1200" height="675" />
+
+        <div class="project-overlay">
+          <div class="project-info">
+            <span class="project-tag">Aluminium</span>
+            <h3>Résidence Les Acacias</h3>
+            <p>Remplacement complet de 48 fenêtres aluminium double vitrage</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="transition-delay:.15s">
+        <img class="project-img" src="https://lh3.googleusercontent.com/d/1E5NBExJCq9UZxhsUnDDQXtww66xBz0RS" alt="Villa Privée – Pose de fenêtres PVC triple vitrage" loading="lazy" width="800" height="500" />
+        <div class="project-overlay">
+          <div class="project-info">
+            <span class="project-tag">PVC</span>
+            <h3>Villa Privée</h3>
+            <p>Pose de fenêtres PVC triple vitrage sur maison individuelle</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="transition-delay:.25s">
+        <img class="project-img" src="https://lh3.googleusercontent.com/d/1W3FBnXruQsjuFyeupsbPYIhaPoBBKoJo" alt="Immeuble Commercial – Serrurerie et blindage de portes" loading="lazy" width="800" height="500" />
+        <div class="project-overlay">
+          <div class="project-info">
+            <span class="project-tag">Serrurerie</span>
+            <h3>Immeuble Commercial</h3>
+            <p>Blindage et systèmes de fermeture sécurisés</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="transition-delay:.35s">
+        <img class="project-img" src="https://lh3.googleusercontent.com/d/1ZlfX9ps7TIamjO6bzzVF12W0Jt2RFVDQ" alt="Entrepôt Industriel – Portails coulissants et grilles métalliques" loading="lazy" width="800" height="500" />
+        <div class="project-overlay">
+          <div class="project-info">
+            <span class="project-tag">Métallique</span>
+            <h3>Entrepôt Industriel</h3>
+            <p>Portails coulissants et grilles de sécurité sur mesure</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="transition-delay:.45s">
+        <img class="project-img" src="https://lh3.googleusercontent.com/d/1hqYfLGQRNNxvWmtltS4-Ftbgv3CpbxXR" alt="École Publique – Rénovation énergétique fenêtres PVC" loading="lazy" width="800" height="500" />
+        <div class="project-overlay">
+          <div class="project-info">
+            <span class="project-tag">PVC</span>
+            <h3>École Publique</h3>
+            <p>Rénovation énergétique : 120 fenêtres PVC posées en 3 semaines</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== POURQUOI NOUS ========== -->
+<section id="pourquoi" aria-labelledby="why-title">
+  <div class="container">
+    <span class="section-label">Pourquoi nous choisir</span>
+    <h2 class="section-title" id="why-title">L'<span>expertise</span> qui fait la différence</h2>
+    <div class="why-grid">
+
+      <div class="why-card reveal" style="transition-delay:.05s">
+        <div class="why-number">01</div>
+        <h3 class="why-title">Expertise Certifiée</h3>
+        <p class="why-desc">Artisans qualifiés, formés aux dernières normes thermiques (RE2020) et aux techniques de pose les plus récentes.</p>
+      </div>
+
+      <div class="why-card reveal" style="transition-delay:.15s">
+        <div class="why-number">02</div>
+        <h3 class="why-title">Matériaux Haut Gamme</h3>
+        <p class="why-desc">Nous sélectionnons rigoureusement nos fournisseurs pour vous garantir des produits durables et performants.</p>
+      </div>
+
+      <div class="why-card reveal" style="transition-delay:.25s">
+        <div class="why-number">03</div>
+        <h3 class="why-title">Délais Respectés</h3>
+        <p class="why-desc">Planification rigoureuse et équipes mobilisées pour tenir les délais annoncés, chantier après chantier.</p>
+      </div>
+
+      <div class="why-card reveal" style="transition-delay:.35s">
+        <div class="why-number">04</div>
+        <h3 class="why-title">Garantie Décennale</h3>
+        <p class="why-desc">Tous nos travaux sont couverts par notre assurance responsabilité civile professionnelle et garantie décennale.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info reveal-left">
+        <span class="section-label">Contact</span>
+        <h2 id="contact-title">Parlons de <span style="color:var(--blue-royal)">votre projet</span></h2>
+        <p>Remplissez le formulaire ou contactez-nous directement. Nous vous répondons sous 24h et établissons votre devis gratuitement.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <strong>Téléphone</strong>
+              <span>+33 X XX XX XX XX</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <span>contact@leslyservice.fr</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Zone d'intervention</strong>
+              <span>Île-de-France et alentours</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text">
+              <strong>Horaires</strong>
+              <span>Lun – Ven : 8h – 18h | Sam : 9h – 13h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal-right" role="form" aria-label="Formulaire de contact">
+        <div id="formContent">
+          <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--dark-text);margin-bottom:1.5rem;">Demande de devis gratuit</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" autocomplete="given-name" required />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Dupont" autocomplete="family-name" required />
+            </div>
+          </div>
+
+           <div class="form-group">
+              <label for="entreprise_nom">Entreprise</label>
+              <input type="text" id="entreprise_nom" name="entreprise_nom" placeholder="Mon entreprise" autocomplete="given-entreprise" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" autocomplete="email" required />
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="+33 6 XX XX XX XX" autocomplete="tel" />
+          </div>
+          <div class="form-group">
+            <label for="service">Type de prestation</label>
+            <select id="service" name="service">
+              <option value="">Sélectionnez une prestation</option>
+              <option>Pose de fenêtres PVC</option>
+              <option>Pose de fenêtres Aluminium</option>
+              <option>Serrurerie</option>
+              <option>Menuiserie métallique</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Décrivez votre projet</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre projet, le nombre de fenêtres, l'adresse du chantier..."></textarea>
+          </div>
+          <button type="button" class="btn-submit" id="submitBtn" onclick="handleSubmit()">
+            Envoyer ma demande
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre demande. Notre équipe vous contactera sous 24h pour établir votre devis gratuit.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://lh3.googleusercontent.com/d/1b9HxIjzym9g9pemVT-7m9ZFVjMDyLuCl" alt="Lesly Service" width="52" height="52" />
+        <p>Expert en menuiserie métallique, serrurerie et pose de fenêtres PVC et aluminium. Qualité et fiabilité depuis plus de 15 ans.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#projets">Nos projets</a></li>
+          <li><a href="#pourquoi">Pourquoi nous</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#contact">Fenêtres PVC</a></li>
+          <li><a href="#contact">Fenêtres Aluminium</a></li>
+          <li><a href="#contact">Serrurerie</a></li>
+          <li><a href="#contact">Menuiserie Métallique</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Lesly Service — Tous droits réservés</p>
+      <p>Menuiserie Métallique · Serrurerie · Fenêtres PVC & Alu</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<a href="#contact" class="float-cta" id="floatCta" aria-label="Devis gratuit">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+  <span class="full">Devis gratuit</span>
+</a>
+
+<!-- ========== JS ========== -->
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('floatCta').classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  // Burger
+  const burger  = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1600;
+    const start = performance.now();
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(ease * target) + (el.dataset.target === '100' ? '%' : '+');
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  }
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  const statsObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); statsObs.unobserve(e.target); } });
+  }, { threshold: .5 });
+  statNumbers.forEach(el => statsObs.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const required = ['prenom', 'nom', 'email'];
+    let valid = true;
+    required.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) { el.style.borderColor = '#e53e3e'; valid = false; }
+      else el.style.borderColor = '';
+    });
+    if (!valid) return;
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  }
+</script>
+</body>
+</html>
