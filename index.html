@@ -1612,7 +1612,71 @@
     if (!valid) return;
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('formSuccess').classList.add('show');
+
+    send_email_contact()
   }
+
+
+  
+  
+let url_api = "https://script.google.com/macros/s/AKfycbzI5AzY8sXiQyJRIeDQs3UwQ1nw463L0mG_aBJGqHUjaBeGjlygtbxdRbwZPYO8JB1VUA/exec"
+  
+  //"https://script.google.com/macros/s/AKfycbxgzBkfvkySd8Qe-YHEtaeFuxwoHxXkIatSbU9lSMdqwdhywl6pQ52eYx5l7pS8QmI4cw/exec"
+
+
+/* Advs94
+"https://script.google.com/macros/s/AKfycbzI5AzY8sXiQyJRIeDQs3UwQ1nw463L0mG_aBJGqHUjaBeGjlygtbxdRbwZPYO8JB1VUA/exec"
+*/
+
+
+const requestOptionsGet = {
+  method: "GET",
+  redirect: "follow"
+};
+
+
+
+  function send_email_contact(){
+    date = Date.now()
+
+    prenom = document.querySelector('#prenom').value
+    nom = document.querySelector('#nom').value
+    entreprise_nom = document.querySelector('#entreprise_nom').value
+    email = document.querySelector('#email').value
+    tel = document.querySelector('#tel').value
+    service = document.querySelector('#service').value
+    message = document.querySelector('#message').value
+
+
+
+    console.log(prenom, nom, entreprise_nom, email,tel, service, message)
+
+  
+    let data = JSON.stringify({
+          date,
+          nom,
+          prenom,
+          entreprise_nom,
+          email,
+          tel,
+          service,
+          message
+    })
+  
+  let data_encode = encodeURIComponent(data)
+  let etat = "send_email"
+  getUrl = `${url_api}?info=${data_encode}&etat=${etat}`
+  fetch(getUrl, requestOptionsGet)
+    .then((response) => response.json())
+    .then((get_data) => {
+      console.log(get_data)
+    })
+
+
+
+  }
+
+  
 </script>
 </body>
 </html>
